@@ -13,3 +13,21 @@ for (let i = 0; i <= 20; i++)
   }</h3>`;
 
 //Exercise 4
+const showPopup = () => {
+  let isValid = true,
+    count = 0;
+  while (isValid) {
+    let confirmAction = confirm("Apakah anda mau mengulang ?");
+    confirmAction
+      ? count++
+      : ((isValid = !isValid), alert(`Perulangan sebanyak ${count}`));
+  }
+};
+
+//Exercise 5
+const showQuiz = () => {
+  let answer = prompt("Sebutkan kepanjangan dari nama IB");
+  answer.toLocaleLowerCase() == "impact byte"
+    ? alert("Selamat jawaban kamu sudah benar")
+    : showQuiz();
+};
