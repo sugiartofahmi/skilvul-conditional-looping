@@ -26,8 +26,11 @@ const showPopup = () => {
 
 //Exercise 5
 const showQuiz = () => {
-  let answer = prompt("Sebutkan kepanjangan dari nama IB");
-  answer.toLocaleLowerCase() == "impact byte"
-    ? alert("Selamat jawaban kamu sudah benar")
-    : showQuiz();
+  let correct = false;
+  while (!correct) {
+    let answer = prompt("Sebutkan kepanjangan dari nama IB");
+    answer.toLowerCase() == "impact byte"
+      ? (correct = true) && alert("Selamat jawaban kamu sudah benar")
+      : (correct = false);
+  }
 };
